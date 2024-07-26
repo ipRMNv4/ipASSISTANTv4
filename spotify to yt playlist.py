@@ -65,7 +65,8 @@ def add_videos_to_playlist(youtube, playlist_id, video_ids):
                         "videoId": video_id
                     }
                 }
-            })
+            }
+        )
 
         for request_body in requests:
             try:
