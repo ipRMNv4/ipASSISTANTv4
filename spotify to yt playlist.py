@@ -3,14 +3,14 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-token = 'BQCwT9_zr6heouVVkzAx_BZ8rUmgUlXXBLCRHalLwj7CqIPckeYe-vwCRzwvvyvfJ1qo9PeYNtobTRBcjbBrvdD97Ri7huxJe9OfY7SRjPL6YlbOZctf-wFoLKhBae5QioGfy9mAiSsD9gyeccq8bZGKSEn31K3RYw1-GPx81obHEcTcVRLws8oOHWjmG-qEpqBoHrnG0MdNj3iC6MPYpdinEl-ask2XLsMYdnGPZJJOQyfJQZRXDHf2f8jb77MGO0BXnzAsRnd9iKu9AYJZMqSv'
+token = 'YOUR SPOTIFY TOKEN'
 user_headers = {
     "Authorization": "Bearer " + token,
     "Content-Type": "application/json"
 }
 
 def playlist_read():
-    playlist_id = "3QwtVQ404pmp68BjdaI5XG"
+    playlist_id = "PLAYLIST ID"
     url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
     song_names = []
 
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     creds = flow.run_local_server(port=0)
     youtube = build('youtube', 'v3', credentials=creds)
 
-    playlist_title = "750 songs"
+    playlist_title = "TITLE OF THE PLAYLIST"
     playlist_description = "This is a description of my new playlist."
     playlist_id = create_playlist(youtube, playlist_title, playlist_description)
     print(f'Playlist ID: {playlist_id}')
